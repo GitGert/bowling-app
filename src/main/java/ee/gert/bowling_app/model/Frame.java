@@ -24,14 +24,6 @@ public class Frame {
         this.score = 0;
     }
 
-    public void calculateScore(Integer extraPoints) {
-        if (turn3 != null) {
-            setScore(turn1 + turn2 + turn3);
-        } else {
-            setScore(turn1 + turn2 + extraPoints);
-        }
-    }
-
     //FIXME: this does not take the last frame with 3 slots into account
     public boolean isStrike() {
         return (this.turn1 == 10);
@@ -41,5 +33,4 @@ public class Frame {
     public boolean isSpare() {
         return (this.turn1 != 10 && this.turn1 + this.turn2 == 10);
     }
-
 }

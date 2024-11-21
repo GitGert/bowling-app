@@ -3,6 +3,7 @@ package ee.gert.bowling_app.controller;
 import ee.gert.bowling_app.model.FrameRequest;
 import ee.gert.bowling_app.model.Player;
 import ee.gert.bowling_app.service.GameService;
+import ee.gert.bowling_app.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,9 @@ public class BowlingController {
     @Autowired
     GameService gameService;
 
+    @Autowired
+    PlayerService playerService;
+
     @GetMapping("start-game")
     public String startGame(){
         gameService.startGame();
@@ -24,16 +28,16 @@ public class BowlingController {
 
     @GetMapping("players")
     public List<Player> getAllPlayers(){
-        return gameService.getPlayers();
+        return playerService.getPlayers();
     }
 
     @PostMapping("player")
     public Player addPlayer(@RequestBody Player player){
-        return gameService.addPlayer(player);
+        return playerService.addPlayer(player);
     }
 
     @PostMapping("add-frame")
     public Player addFrame(@RequestBody FrameRequest frameRequest){
-        return gameService.addFrame(frameRequest.getFrameIndex(), frameRequest.getFrame(), frameRequest.getPlayerName());
+        return playerService.addFrame(frameRequest.getFrameIndex(), frameRequest.getFrame(), frameRequest.getPlayerName());
     }
 }
