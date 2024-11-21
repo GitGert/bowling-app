@@ -35,7 +35,8 @@ public class GameService {
         if (player == null){
             return null;
         }
-        if (!player.isNewFrameValid(frame)){
+
+        if (!player.isNewFrameValid(frame, index )){
             return null;
         }
         
@@ -45,7 +46,7 @@ public class GameService {
             playerFrames.set(index, frame);
             player.calculateTotalScore();
             return  player;
-        }else if (playerFrames.size() >=10){ // if there is no index check if there is room for more.
+        }else if (playerFrames.size() >10){ // if there is no index check if there is room for more.
             return  player;
         }
 
