@@ -2,9 +2,11 @@ package ee.gert.bowling_app.validator;
 
 import ee.gert.bowling_app.model.Frame;
 import ee.gert.bowling_app.model.Player;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class FrameValidator {
     public boolean isNewFrameValid(Player player, Frame newFrame, Integer editingIndex){
         List<Frame> frames = player.getFrames();

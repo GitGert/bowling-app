@@ -2,9 +2,13 @@ package ee.gert.bowling_app.utility;
 
 import ee.gert.bowling_app.model.Frame;
 import ee.gert.bowling_app.model.Player;
+import lombok.experimental.UtilityClass;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ScoreCalculator {
     public void calculateTotalScore(Player player){
         List<Frame> frames = player.getFrames();
