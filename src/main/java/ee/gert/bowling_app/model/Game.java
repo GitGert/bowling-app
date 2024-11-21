@@ -25,7 +25,11 @@ public class Game {
         return  null;
     }
 
-    public Integer getTotalScore(){
+
+
+
+
+//    public Integer getTotalScore(){
 
 //        for (Player player : this.players.values()){
 //            this. player.getTotalScore();
@@ -38,4 +42,4 @@ public class Game {
 
 
 
-}
+//}
