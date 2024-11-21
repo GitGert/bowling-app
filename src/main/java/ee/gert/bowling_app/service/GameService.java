@@ -21,6 +21,7 @@ public class GameService {
     }
 
     public Player addPlayer(Player player){
+        //FIXME: add a unique name validator here.
         game.addPlayer(player);
         return player;
     }
@@ -46,7 +47,7 @@ public class GameService {
             playerFrames.set(index, frame);
             player.calculateTotalScore();
             return  player;
-        }else if (playerFrames.size() >10){ // if there is no index check if there is room for more.
+        }else if (playerFrames.size() >10){ // if there is no index for an edit check if there is room for more.
             return  player;
         }
 

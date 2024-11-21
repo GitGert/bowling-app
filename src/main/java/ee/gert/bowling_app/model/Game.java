@@ -7,39 +7,20 @@ import java.util.List;
 
 @Data
 public class Game {
-    private HashMap<String ,Player> players;
+    private HashMap<String, Player> players;
 
-    public void addPlayer(Player player){
-        //TODO: must add check for player name to be unique
+    public void addPlayer(Player player) {
         this.players.put(player.getName(), player);
     }
 
-    public Game(){
+    public Game() {
         this.players = new HashMap<>();
     }
 
-    public Player getPlayerByName(String name){
-        if (players.containsKey(name)){
+    public Player getPlayerByName(String name) {
+        if (players.containsKey(name)) {
             return players.get(name);
         }
-        return  null;
+        return null;
     }
-
-
-
-
-
-//    public Integer getTotalScore(){
-
-//        for (Player player : this.players.values()){
-//            this. player.getTotalScore();
-//        }
-
-    }
-
-// I should Have a map of users tied to 10 array length frames
-//    Map<Player[], Frame[]> userScores = new HashMap<>();
-
-
-
-//}
+}
